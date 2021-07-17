@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $('#Btn').on('click',function () {
+                $.ajax({
+                    url: '/sql',
+                    type: 'POST',
+                    data: {
+                        "id": $('#d1').val(),
+                        "name": $('#d2').val()
+                    },
+                    success: function (res) {
+                        alert("注册成功");
+                    },
+                    error: function (res) {
+                        alert("注册失败")
+                    }
+                })
+            })
+        })
+    </script>
+
+
+</head>
+<body>
+<input id="d1" type="text">
+<br>
+<input id="d2" type="text">
+<br>
+<button type="submit" id="Btn">login</button>
+</body>
+</html>
